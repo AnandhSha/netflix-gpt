@@ -1,24 +1,20 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Header from './Header'
 import { BG_URL } from '../utils/constants'
 import { validateInput } from '../utils/validate'
 import { auth } from '../utils/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword , updateProfile} from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
 import { ANANDH_GITHUB_URL } from '../utils/constants'
 import { useDispatch } from 'react-redux'
 import { addUser  } from '../utils/userSlice'
 
 const Login = () => {
-
   const [isSignIn, setIsSignIn] = useState(true)
   const fullNameRef = useRef(null)
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState(null)
   const dispatch = useDispatch()
-
-  const navigate = useNavigate()
 
   const handleToggleSignIn = () => {
     setIsSignIn(!isSignIn)
@@ -35,7 +31,6 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user
           console.log(user)
-          navigate('/browse')
         })
         .catch((error) => {
           console.log(error)
@@ -68,7 +63,6 @@ const Login = () => {
               displayName : displayName || '',
               photoURL : photoURL || '',
             }))
-            navigate('/browse')
           }).catch((error) => { 
             const errorMessage = error.message
             setErrorMessage(errorMessage)
