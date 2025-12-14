@@ -10,3 +10,11 @@ export const USER_AVATAR =
 export const ANANDH_LINKEDIN_URL = 'https://media.licdn.com/dms/image/v2/D5635AQFd_4aCCjeKhA/profile-framedphoto-shrink_400_400/B56Zr9Tx34L0Ag-/0/1765186412252?e=1765882800&v=beta&t=cjYN2TQAkmXSV9RgTl_miaAPZNfkCdCGQreqjpQZ2Lw'
 
 export const ANANDH_GITHUB_URL = 'https://avatars.githubusercontent.com/u/117267877?v=4'
+
+export const TMDB_API_OPTIONS = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMDBlY2UzZGMwNjRkMGM5ZThlNmYxZmMzMThmZDFkOCIsIm5iZiI6MTc2NTY0NzQ1MC41MDQsInN1YiI6IjY5M2RhNDVhYWY1NDk5MGY5ODYxOWU3YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1vA9lSrdt7H389GiJ6Gun-SD37PFBdU7JjWDvdkYo1s'
+    }
+  };

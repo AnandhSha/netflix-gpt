@@ -40,9 +40,13 @@ const Header = () => {
   return (
     <div className='absolute px-8 py-2 bg-linear-to-b from-black z-10 flex w-full justify-between items-center'>
       <img className='w-44' src={LOGO} alt="logo" />
-      {user && <div className='flex items-center gap-3 p-2'> 
-        <img className='w-14 h-14 rounded-lg' src={user.photoURL} alt="user-avatar" /> 
-        <button className='bg-red-600 text-white font-bold p-2 rounded-md' onClick={handleSignOut}>Sign Out</button>
+      {user && 
+      <div className='flex gap-3 p-2'> 
+        <div className='flex flex-col items-center gap-1'>
+          <img className='w-12 h-12 rounded-lg' src={user.photoURL} alt="user-avatar" /> 
+          <h1 className='text-green-600 text-sm font-bold'>{user.displayName}</h1>
+        </div>
+        <button className='bg-red-600 text-white w-24 h-10 font-bold p-2 rounded-md' onClick={handleSignOut}>Sign Out</button>
         </div>
       }
     </div>
