@@ -28,6 +28,10 @@
 - Update store with trailer video Data
 - Embedded the youtube video and make it autoplay and mute
 - Tailwind classes to make main container look awesome
+- Build Secondary Component
+- Build MovieList
+- Build MovieCard
+- TMDM Image CDN URL
   
 # Features
 
