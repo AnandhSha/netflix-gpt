@@ -32,6 +32,10 @@
 - Build MovieList
 - Build MovieCard
 - TMDM Image CDN URL
+- usePopular Movies custom hook
+- Create GPTSearch Page
+- Create GPT SearchBar
+- Add Multi-language feature
   
 # Features
 
