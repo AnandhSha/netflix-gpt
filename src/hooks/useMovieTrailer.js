@@ -1,10 +1,12 @@
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { TMDB_API_OPTIONS } from "../utils/constants"
 import { addMovieTrailer } from "../utils/moviesSlice"
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch()
+  const movieTrailer = useSelector((store) => store.movies.movieTrailer)
+  
   const getMovieTrailer = async () => {
       const data = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos`, TMDB_API_OPTIONS)
       const json = await data.json()
@@ -13,8 +15,8 @@ const useMovieTrailer = (movieId) => {
       dispatch(addMovieTrailer(trailer))
     }
   useEffect(() => {
-    getMovieTrailer()
-  }, [])
+    !movieTrailer && getMovieTrailer()
+  }, [movieTrailer])
 }
 
 export default useMovieTrailer
